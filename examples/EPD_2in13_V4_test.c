@@ -70,9 +70,9 @@ int EPD_2in13_V4_test(void)
 
     Debug("show bmp------------------------\r\n");
     Paint_SelectImage(BlackImage);
-    GUI_ReadBmp("./pic/2in13_1.bmp", 0, 0);
+    GUI_ReadBmp("./pic/summit.bmp", 0, 0);
     EPD_2in13_V4_Display(BlackImage);
-    DEV_Delay_ms(3000);
+    DEV_Delay_ms(8000);
 #endif
 
 #if 1   //show image for array    
