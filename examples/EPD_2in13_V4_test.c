@@ -62,26 +62,26 @@ int EPD_2in13_V4_test(void)
 
     while(1) {
         Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
-        Debug("show window BMP-----------------\r\n");
+        Debug("Slide 1\r\n");
         Paint_SelectImage(BlackImage);
         GUI_ReadBmp("./pic/where_you_are_1bit.bmp", 0, 0);
         EPD_2in13_V4_Display(BlackImage);
         DEV_Delay_ms(60000);
 
-        Debug("show bmp------------------------\r\n");
+        Debug("Slide 2\r\n");
         Paint_SelectImage(BlackImage);
         GUI_ReadBmp("./pic/summit.bmp", 0, 0);
         EPD_2in13_V4_Display(BlackImage);
         DEV_Delay_ms(60000);
 
         Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
-        Debug("show window BMP-----------------\r\n");
+        Debug("Slide 3\r\n");
         Paint_SelectImage(BlackImage);
         GUI_ReadBmp("./pic/lights_go_out_1bit.bmp", 0, 0);
         EPD_2in13_V4_Display(BlackImage);
         DEV_Delay_ms(60000);
     }
-    
+
 	Debug("Clear...\r\n");
 	EPD_2in13_V4_Init();
     EPD_2in13_V4_Clear();
