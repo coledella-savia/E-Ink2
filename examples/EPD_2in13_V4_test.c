@@ -66,27 +66,27 @@ int EPD_2in13_V4_test(void)
         Paint_SelectImage(BlackImage);
         GUI_ReadBmp("./pic/where_you_are_1bit.bmp", 0, 0);
         EPD_2in13_V4_Display(BlackImage);
-        DEV_Delay_ms(60000);
+        DEV_Delay_ms(30000);
 
         Debug("Slide 2\r\n");
         Paint_SelectImage(BlackImage);
         GUI_ReadBmp("./pic/summit.bmp", 0, 0);
         EPD_2in13_V4_Display(BlackImage);
-        DEV_Delay_ms(60000);
+        DEV_Delay_ms(30000);
 
         Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
         Debug("Slide 3\r\n");
         Paint_SelectImage(BlackImage);
         GUI_ReadBmp("./pic/tweet_250x122.bmp", 0, 0);
         EPD_2in13_V4_Display(BlackImage);
-        DEV_Delay_ms(60000);
+        DEV_Delay_ms(30000);
 
         Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
         Debug("Slide 4\r\n");
         Paint_SelectImage(BlackImage);
         GUI_ReadBmp("./pic/sky_window_250x122_1bit.bmp", 0, 0);
         EPD_2in13_V4_Display(BlackImage);
-        DEV_Delay_ms(60000);
+        DEV_Delay_ms(30000);
     }
 
 	Debug("Clear...\r\n");
