@@ -5,6 +5,9 @@
 void  Handler(int signo)
 {
     //System Exit
+    Debug("Clear...\r\n");
+	EPD_2in13_V4_Init();
+    EPD_2in13_V4_Clear();
     printf("\r\nHandler:exit\r\n");
     DEV_Module_Exit();
 
