@@ -59,33 +59,29 @@ int EPD_2in13_V4_test(void)
     Debug("Paint_NewImage\r\n");
     Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
 	Paint_Clear(WHITE);
-	
-#if 1   // show bmp
-	Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
-    Debug("show window BMP-----------------\r\n");
-    Paint_SelectImage(BlackImage);
-    GUI_ReadBmp("./pic/100x100.bmp", 10, 10);
-    EPD_2in13_V4_Display(BlackImage);
-    DEV_Delay_ms(3000);
 
-    Debug("show bmp------------------------\r\n");
-    Paint_SelectImage(BlackImage);
-    GUI_ReadBmp("./pic/summit.bmp", 0, 0);
-    EPD_2in13_V4_Display(BlackImage);
-    DEV_Delay_ms(8000);
-#endif
+    while(1) {
+        Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
+        Debug("show window BMP-----------------\r\n");
+        Paint_SelectImage(BlackImage);
+        GUI_ReadBmp("./pic/where_you_are_1bit.bmp", 0, 0);
+        EPD_2in13_V4_Display(BlackImage);
+        DEV_Delay_ms(60000);
 
-#if 1   //show image for array    
-    Debug("show image for array\r\n");
-    EPD_2in13_V4_Init_Fast();
-    Paint_SelectImage(BlackImage);
-    Paint_Clear(WHITE);
-    Paint_DrawBitMap(johnsummitcpa);
+        Debug("show bmp------------------------\r\n");
+        Paint_SelectImage(BlackImage);
+        GUI_ReadBmp("./pic/summit.bmp", 0, 0);
+        EPD_2in13_V4_Display(BlackImage);
+        DEV_Delay_ms(60000);
 
-    EPD_2in13_V4_Display_Fast(BlackImage);
-    DEV_Delay_ms(8000);
-#endif
-
+        Paint_NewImage(BlackImage, EPD_2in13_V4_WIDTH, EPD_2in13_V4_HEIGHT, 90, WHITE);
+        Debug("show window BMP-----------------\r\n");
+        Paint_SelectImage(BlackImage);
+        GUI_ReadBmp("./pic/lights_go_out_1bit.bmp", 0, 0);
+        EPD_2in13_V4_Display(BlackImage);
+        DEV_Delay_ms(60000);
+    }
+    
 	Debug("Clear...\r\n");
 	EPD_2in13_V4_Init();
     EPD_2in13_V4_Clear();
